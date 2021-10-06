@@ -22,4 +22,4 @@ You can preview this site at
 
 - [ ] http://davetech.netlify.app
 
-Your welcome to contribute and to this template.
+Your welcome to contribute and add to this template.
