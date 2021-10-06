@@ -20,6 +20,6 @@ Edit the details according to your needs
 
 You can preview this site at 
 
-- [ ] http://davetech.netlify.app
+- [ ] https://davetech.netlify.app
 
 Your welcome to contribute and add to this template.
