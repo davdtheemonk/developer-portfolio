@@ -4,6 +4,7 @@
 This portfolio is made of pure HTML and CSS.
 
 NOTE : *It currently contains my details*
+    
 
 Easy to setup and use.
 
@@ -17,5 +18,8 @@ Clone this respiratory
 
 Edit the details according to your needs
 
+You can preview this site at 
+
+- [ ] http://davetech.netlify.app
 
 Your welcome to contribute and to this template.
