@@ -17,6 +17,20 @@ Developer Portfolio Template in HTML-->
 
 <script src="https://kit.fontawesome.com/d5880e197d.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://github.com/davdtheemonk/developer-portfolio/blob/main/style.css">
+<script>
+var myVar;
+  
+  function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+  }
+  
+  function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
+  }
+
+</script>
+   
 <style>
 #loader {
   margin:20px auto;
@@ -305,10 +319,10 @@ body{
     color:white;
   }
 </style>
-
+<body onload="myFunction()">
 <div id="loader"></div>
 <div id="myDiv">
-<body onload="myFunction()">
+
 <header>
       <title>David Mugalla</title>
 </header>
@@ -471,20 +485,7 @@ body{
        
     </footer>
 </div>
-<script>
-var myVar;
-  
-  function myFunction() {
-    myVar = setTimeout(showPage, 3000);
-  }
-  
-  function showPage() {
-    document.getElementById("loader").style.display = "none";
-    document.getElementById("myDiv").style.display = "block";
-  }
 
-</script>
-   
   </body>
   
   
