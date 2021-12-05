@@ -305,19 +305,7 @@ body{
     color:white;
   }
 </style>
-<script>
-var myVar;
-  
-  function myFunction() {
-    myVar = setTimeout(showPage, 3000);
-  }
-  
-  function showPage() {
-    document.getElementById("loader").style.display = "none";
-    document.getElementById("myDiv").style.display = "block";
-  }
 
-</script>
 <div id="loader></div>
 <div id="myDiv">
 <header>
@@ -482,6 +470,19 @@ var myVar;
        
     </footer>
 </div>
+<script>
+var myVar;
+  
+  function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+  }
+  
+  function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
+  }
+
+</script>
    
   </body>
   
