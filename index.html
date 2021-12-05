@@ -21,7 +21,7 @@ Developer Portfolio Template in HTML-->
 <style>
 #loader {
   margin:20px auto;
-  color:lightgreen;
+  color:azure;
   width:95px;
   height:40px;
   --d:radial-gradient(farthest-side,currentColor 90%,#0000);
@@ -351,19 +351,20 @@ body{
  
           <!--This Script Connects my Website To Bitrix24,a live chat Messaging plartform.REMOVE IT when using the template-->
 <script>
-        (function(w,d,u){
-                var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
-                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-        })(window,document,'https://cdn.bitrix24.com/b19033863/crm/site_button/loader_4_elsvgj.js');
-var myVar;
-  
-  function myFunction() {
+function myFunction() {
     myVar = setTimeout(showPage, 3000);
   }
   
   function showPage() {
     document.getElementById("loader").style.display = "none";
     document.getElementById("myDiv").style.display = "block";
+        (function(w,d,u){
+                var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
+                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://cdn.bitrix24.com/b19033863/crm/site_button/loader_4_elsvgj.js');
+var myVar;
+  
+  
   }
 
 </script>
