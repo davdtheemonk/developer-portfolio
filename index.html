@@ -43,7 +43,23 @@ Developer Portfolio Template in HTML-->
   100% {background-position:calc(0*100%/3) 100%, calc(1*100%/3) 100%, calc(2*100%/3) 100%, calc(3*100%/3) 100%}
 }
 
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
 
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
 
       
 body{
@@ -308,7 +324,7 @@ body{
 </style>
 <body onload="myFunction()" style="margin:0;">
 <div id="loader"></div>
-<div id="myDiv">
+<div id="myDiv" class="animate-bottom" style="display:none";>
 
 <header>
       <title>David Mugalla</title>
