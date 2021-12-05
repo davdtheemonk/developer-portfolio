@@ -13,7 +13,7 @@ Developer Portfolio Template in HTML-->
 
 
 
-
+<script src="js/jquery.waypoints.min.js"></script>
 
 <script src="https://kit.fontawesome.com/d5880e197d.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://github.com/davdtheemonk/developer-portfolio/blob/main/style.css">
@@ -87,7 +87,63 @@ display: inline-block;
   to{ bottom:0; opacity:1 }
 }
 
-      
+    #about-us {
+background-color: white;
+padding: 60px 0;
+}
+
+#about-us h2 {
+margin-top: 0;
+color: #333;
+}
+
+#about-us .lead {
+font-size: 16px;
+margin-bottom: 10px;
+}
+
+#about-us h1 {
+margin-bottom: 30px;
+}
+
+.progress-title{
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 10px 0;
+}
+
+.progress{
+    height: 20px;
+    line-height: 15px;
+    border-radius: 5px;
+    background: #f0f0f0;
+    margin-bottom: 30px;
+    box-shadow: none;
+    overflow: visible;
+}
+
+.progress-bar{
+    position: relative;
+    border-radius: 0;
+    opacity: 0;
+}
+
+.progress .progress-value{
+    display: block;
+    font-size: 13px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 8px;
+}
+
+@-webkit-keyframes animate-positive{
+    0% { width: 0%; }
+}
+@keyframes animate-positive{
+    0% { width: 0%; }
+}  
 body{
     background-color:white;
   }
@@ -373,6 +429,13 @@ body{
  
           <!--This Script Connects my Website To Bitrix24,a live chat Messaging plartform.REMOVE IT when using the template-->
 <script>
+$(document).ready(function() {
+$('.progress-bar').waypoint(function() {
+$('.progress-bar').css({
+animation: "animate-positive 2s",
+opacity: "1"
+});
+}, { offset: '75%' });
 function myFunction() {
     myVar = setTimeout(showPage, 3000);
   }
@@ -478,6 +541,40 @@ var myVar;
         <i  style="font-size:45px" class="fas fa-code-branch"></i>
         <i style="font-size:45px" class="fab fa-linux"></i>
         <i style = "font-size:45px"class="fab fa-java"></i>
+<section id="about-us">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 text-center">
+</div>
+</div>
+<div class="row">
+<div class="col-sm-6">
+<div class="about-info">
+</div>
+</div>
+<div class="col-sm-6">
+<h3 class="progress-title">HTML5</h3>
+<div class="progress">
+<div class="progress-bar" style="background-color: #34b1c4; width: 90%;">
+<div class="progress-value">90%</div>
+</div>
+</div>
+<h3 class="progress-title">JS</h3>
+<div class="progress">
+<div class="progress-bar" style="background-color: #34b1c4; width: 45%;">
+<div class="progress-value">45%</div>
+</div>
+</div>
+<h3 class="progress-title">CSS3</h3>
+<div class="progress">
+<div class="progress-bar" style="background-color: #34b1c4; width: 78%;">
+<div class="progress-value">78%</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
         
  <ul>
    <li>Data Science</li>
