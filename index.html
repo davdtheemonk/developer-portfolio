@@ -19,6 +19,25 @@ Developer Portfolio Template in HTML-->
 <link rel="stylesheet" href="https://github.com/davdtheemonk/developer-portfolio/blob/main/style.css">
 
 <style>
+   .typed-out{
+        overflow: hidden;
+        border-right: .30em solid orange;
+        border-radius: 4px;
+        white-space: nowrap;
+        animation: 
+          typing 1s steps(20, end) forwards,
+          blinking 1.2s infinite;
+        font-size: 1.6rem;
+        width: 0;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blinking {
+      from { border-color: transparent }
+      to { border-color: white; }
+ }
 #loader {
   margin:20px auto;
   color:teal;
@@ -376,11 +395,13 @@ var myVar;
          
         
         </div> 
-<div id="myDiv" class="animate-bottom" style="display:none">
+
 
         <!--Your Name and Role Goes Here-->
             <h1>    David Mugalla Chivatsi<h1>
+<div class="typed-out">
           <h3>Data Scientist,ML Engineer,Web Developer</h3>
+</div>
               <div id="social">
                   <!--Your Github,linkedin and instagram Social media link goes here-->
               <a target="_blank" href="http://www.github.com/davdtheemonk"><i style="font-size:30px" class="fab fa-github-square"></i></a>
@@ -388,7 +409,7 @@ var myVar;
               <a href="#"><i style ="font-size:30px" class="fab fa-instagram"></i></a>
 </div>
               
-              </div>
+              
       </div>
       
     </div>
