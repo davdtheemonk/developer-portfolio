@@ -147,6 +147,7 @@ margin-bottom: 30px;
 }  
 body{
     background-color:white;
+    
   }
   #tab1{
     
@@ -226,7 +227,8 @@ body{
     border-radius:50%;
   }
   #projects2{
-       display: flex;
+       display: flex;f
+       text-align :center;
           position: absolute;
       top: 600px;
       right: 0;
@@ -235,7 +237,7 @@ body{
     align-content: space-between;
     justify-content: space-between;
      
-    background-color:grey;
+    background-color:#42455a;
   }
   .project-tile2{
       width:70%;
@@ -258,6 +260,7 @@ body{
       z-index: 20;
       
   }
+ 
     #navbar img {
       float: left;
       width: 80px;
@@ -290,7 +293,7 @@ body{
     align-content: space-between;
     justify-content: space-between;
      
-    background-color:grey;
+    background-color:#42455a;
   }
   .project-tile1 a{
     text-decoration:none;
@@ -301,10 +304,10 @@ body{
   }
   .project-tile1{
     
-    color:white;
+    color: white;
     
     width:70%;
-    height:650px;
+    height:750px;
    
     box-shadow:black 0px 0px 4px;
     padding:20px;
@@ -314,14 +317,15 @@ body{
     
     display:flex;
           position: absolute;
-      top: 1374px;
+          text-align:center;
+      top: 1474px;
       right: 0; 
       width: 100% !important;
       
     align-content: space-between;
     justify-content: space-between;
      
-    background-color:grey;
+    background-color:#42455a;
   }
   #card{
     width: 90%;
@@ -343,6 +347,16 @@ body{
     justify-content:space-between;
     
   }
+ .reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 2s all ease;
+}
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
   .project-tile{
     
     width:70%;
@@ -352,6 +366,43 @@ body{
     padding:20px;
       
   }
+  .face-button {
+  $height: 64px;
+  $accentColor: #e43;
+  
+  height: $height;
+  display: inline-block;
+  border: 3px solid $accentColor;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  color: $accentColor;
+  overflow: hidden;
+  
+  .icon {
+    margin-right: 6px;
+  }
+  
+  .face-primary,
+  .face-secondary {
+    display: block;
+    padding: 0 32px;
+    line-height: $height;
+    transition: margin .4s;
+  }
+  
+  .face-primary {
+    background-color: $accentColor;
+    color: #fff;
+  }
+  
+  &:hover .face-primary {
+    margin-top: -$height;
+  }
+}
+
   #social{
       display: flex;
     justify-content: space-evenly;
@@ -360,16 +411,28 @@ body{
   i:hover{
     color:white;
   }
-  
+  .res:hover{
+  color:white
+  }
   github{
     height:100px;
   }
+* {
+scroll-behaviour : smooth;
+}
+ li a:hover,
+ li a.active {
+  background: #42455a;
+  color: #42455a;
+  transition: 0.5s ease-out;
+  letter-spacing: 2px;
+}
   footer{
     text-align:center;
     color:white;
     position:absolute;
     bottom:10px;
-    top:2500px;
+    top:2700px;
       background-color:black;
         height:  120px;
       width:100%;
@@ -378,6 +441,34 @@ body{
     z-index:1px;
     
   }
+.active.fade-left {
+  animation: fade-left 1s ease-in;
+}
+.active.fade-right {
+  animation: fade-right 1s ease-in;
+@keyframes fade-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
   #spic{
         border-radius:50%;
     box-shadow:green 0px 0px 4px;
@@ -400,6 +491,12 @@ body{
   #foot{
     color:white;
   }
+  section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;!important
+}
 </style>
 <body onload="myFunction()" style="margin:0;">
 <div id="loader"></div>
@@ -419,8 +516,8 @@ body{
     <img src ="https://owaisnoor.info/blog/wp-content/uploads/2019/03/maxresdefault-1024x576.jpg" alt="logo">
 
     <ul>
-      <li><a href="#projects">About me</a></li>
-      <li><a href="#projects">Portfolio</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
       <li><a href="#github">Resume</a></li>
     </ul>
     
@@ -447,8 +544,21 @@ var myVar;
   
   
   }
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
 
-
+window.addEventListener("scroll", reveal);
 </script>
     <div id="Welcome-section">
       <div id="tab1">
@@ -471,6 +581,19 @@ var myVar;
                   <!--Your Github,linkedin and instagram Social media link goes here-->
               <a target="_blank" href="http://www.github.com/davdtheemonk"><i style="font-size:30px" class="fab fa-github-square"></i></a>
 <a target="_blank" href="https://ke.linkedin.com/in/david-mugalla-198149215">    <i style="font-size:30px" class="fab fa-linkedin-in"></i></a>
+<a class="face-button" href="#" class="res" download rel="noopener noreferrer" target="_blank">
+
+  <div class="face-primary">
+    <span class="icon fa fa-cloud"></span>
+    My Resume
+  </div>
+  
+  <div class="face-secondary">
+    <span class="icon fa fa-hdd-o"></span>
+    Size: 52 kb
+  </div>
+
+</a>
               <a href="#"><i style ="font-size:30px" class="fab fa-instagram"></i></a>
 </div>
               
@@ -480,22 +603,32 @@ var myVar;
     </div>
    
     </nav>  
-    <div id="projects">
+    <div id="projects" class="container reveal fade-right">
  
       <div class="project-tile1">
           <!--Your Contact information goes here-->
+          
+          
+          <h3 style="font-size:35px">Hello, I'm<h3>
+<h3 style="color:palegreen;font-size:35px">David Mugalla</h3>
+
+<p style="font-size:15px">A computer science student from Kenya. I aim to deepen my understanding in various areas of technology, innovation,product design, development and beyond.
+          </p>
+          <hr>
         <h4>INFO</h4> 
+ 
        <hr>
        
 
-      
-       
+      <section>
+           <div class="text-container">
+      <div class="text-box">
 
 
            
         <i class="fas fa-envelope"> Email</i><p id="#p">mugalladave@gmail.com</p>
         <i class="fas fa-globe"> Website</i>
-        <p>davemc.tech</p>
+        <p>https//:davetech.netlify.</p>
         <i class="fas fa-birthday-cake"> Birth Date</i>
         <p>*
         </p>
@@ -507,18 +640,21 @@ var myVar;
         
       
         <hr>
-       <i class="fab fa-github"> Github</i>
-        <p><a href="http://www.github.com/davdtheemonk">http://www.github.com/davdtheemonk</a></p>
-        <i class="fab fa-linkedin"> Linkedin</i>
-        <p><a href="https://ke.linkedin.com/in/david-mugalla-198149215">https://ke.linkedin.com/in/david-mugalla-198149215</a></p><br>
+     <a href="http://www.github.com/davdtheemonk">  <i class="fab fa-github"> Github</i><a/>
+      
+       <a href="https://ke.linkedin.com/in/david-mugalla-198149215"> <i class="fab fa-linkedin"> Linkedin</i></a>
+       <br>
 
 
+        </div>
+        </div>
+        </section>
         
       </div>
  
       
     </div>
-        <div id="projects1">
+        <div id="projects1" class="container reveal fade-left">
  
       <div class="project-tile">
           <!--Your Education Background Goes Here-->
@@ -565,7 +701,7 @@ var myVar;
       </div>
         </div>
         </div>
-        <div id="projects2">
+        <div id="projects2" class="container reveal fade-right">
  
       <div class="project-tile2">
           <!--Your personal projects Go here-->
@@ -580,6 +716,7 @@ var myVar;
 <a href="https://github.com/davdtheemonk/developer-portfolio"><img width="350px" height="80px" style="box-shadow:black 0px 0px 4px;" src="https://gh-card.dev/repos/davdtheemonk/developer-portfolio.svg"></a>
 <a href="https://github.com/davdtheemonk/dslweb-analyzed-web-app"><img width="350px" height="80px" style="box-shadow:black 0px 0px 4px;" src="https://gh-card.dev/repos/davdtheemonk/dslweb-analyzed-web-app.svg"></a>
 <a href="https://github.com/davdtheemonk/YoutubeViews"><img width="350px" height="80px" style="box-shadow:black 0px 0px 4px;"  src="https://gh-card.dev/repos/davdtheemonk/YoutubeViews.svg"></a>
+
             </div>
       </div>
  
