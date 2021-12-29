@@ -208,6 +208,14 @@ body{
     font-family:;
     
   }
+  #xlm #social.a{
+      float: right;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      }
   
   
   #spotify{
@@ -402,7 +410,60 @@ body{
     margin-top: -$height;
   }
 }
+body{background-color:#000; }
 
+html body [data-ca3_iconfont="ETmodules"]::before {
+    font-family: "ETmodules";
+}
+[data-ca3_icon]::before {
+    font-weight: normal;
+    content: attr(data-ca3_icon);
+}
+
+.ca3-scroll-down-arrow {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2hldnJvbl90aGluX2Rvd24iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiBmaWxsPSJ3aGl0ZSIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggZD0iTTE3LjQxOCw2LjEwOWMwLjI3Mi0wLjI2OCwwLjcwOS0wLjI2OCwwLjk3OSwwYzAuMjcsMC4yNjgsMC4yNzEsMC43MDEsMCwwLjk2OWwtNy45MDgsNy44M2MtMC4yNywwLjI2OC0wLjcwNywwLjI2OC0wLjk3OSwwbC03LjkwOC03LjgzYy0wLjI3LTAuMjY4LTAuMjctMC43MDEsMC0wLjk2OWMwLjI3MS0wLjI2OCwwLjcwOS0wLjI2OCwwLjk3OSwwTDEwLDEzLjI1TDE3LjQxOCw2LjEwOXoiLz48L3N2Zz4=);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ca3-scroll-down-link {
+  cursor:pointer;
+  height: 60px;
+  width: 80px;
+  margin: 0px 0 0 -40px;
+  line-height: 60px;
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  color: #FFF;
+  text-align: center;
+  font-size: 70px;
+  z-index: 100;
+  text-decoration: none;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+
+  -webkit-animation: ca3_fade_move_down 2s ease-in-out infinite;
+  -moz-animation:    ca3_fade_move_down 2s ease-in-out infinite;
+  animation:         ca3_fade_move_down 2s ease-in-out infinite;
+}
+
+
+/*animated scroll arrow animation*/
+@-webkit-keyframes ca3_fade_move_down {
+  0%   { -webkit-transform:translate(0,-20px); opacity: 0;  }
+  50%  { opacity: 1;  }
+  100% { -webkit-transform:translate(0,20px); opacity: 0; }
+}
+@-moz-keyframes ca3_fade_move_down {
+  0%   { -moz-transform:translate(0,-20px); opacity: 0;  }
+  50%  { opacity: 1;  }
+  100% { -moz-transform:translate(0,20px); opacity: 0; }
+}
+@keyframes ca3_fade_move_down {
+  0%   { transform:translate(0,-20px); opacity: 0;  }
+  50%  { opacity: 1;  }
+  100% { transform:translate(0,20px); opacity: 0; }
+}
   #social{
       display: flex;
     justify-content: space-evenly;
@@ -482,6 +543,12 @@ scroll-behaviour : smooth;
       height: 90px !important;
     
   }
+  @media (max-width: 768px) {
+    body {
+        height:100vh;
+    }
+}
+
   footer img{
       border-radius:16px;
       width: 60px !important;
@@ -513,11 +580,11 @@ scroll-behaviour : smooth;
 <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet"> 
 <main>
   <nav id="navbar">
-    <img src ="https://owaisnoor.info/blog/wp-content/uploads/2019/03/maxresdefault-1024x576.jpg" alt="logo">
+    <img src ="https://codersera.com/blog/wp-content/uploads/2019/07/BLOG-23-L-3.jpg" alt="logo">
 
     <ul>
       <li><a href="#">Blog</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#projects">Contact</a></li>
       <li><a href="#github">Resume</a></li>
     </ul>
     
@@ -597,19 +664,24 @@ window.addEventListener("scroll", reveal);
               <a href="#"><i style ="font-size:30px" class="fab fa-instagram"></i></a>
 </div>
               
-              
+         
+
+  <a class="ca3-scroll-down-link ca3-scroll-down-arrow" href="#xlm" data-ca3_iconfont="ETmodules" data-ca3_icon=""SCROLL></a>
+
+     
       </div>
       
     </div>
    
     </nav>  
+    
     <div id="projects" class="container reveal fade-right">
  
       <div class="project-tile1">
           <!--Your Contact information goes here-->
           
           
-          <h3 style="font-size:35px">Hello, I'm<h3>
+          <h3 style="font-size:35px" id="hello">Hello, I'm<h3>
 <h3 style="color:palegreen;font-size:35px">David Mugalla</h3>
 
 <p style="font-size:15px">A computer science student from Kenya. I aim to deepen my understanding in various areas of technology, innovation,product design, development and beyond.
@@ -628,7 +700,7 @@ window.addEventListener("scroll", reveal);
            
         <i class="fas fa-envelope"> Email</i><p id="#p">mugalladave@gmail.com</p>
         <i class="fas fa-globe"> Website</i>
-        <p>https//:davetech.netlify.</p>
+        <p>https://davetech.netlify.app</p>
         <i class="fas fa-birthday-cake"> Birth Date</i>
         <p>*
         </p>
@@ -722,9 +794,25 @@ window.addEventListener("scroll", reveal);
  
       
     </div>
-    <footer >
+    <footer id="xlm">
      <p>Made with <i class="far fa-heart"></i> and pure HTML cherries with 100% CSS toppings</p>
      <!--You can Issue a copyright on the website or leave my Name-->
+     <div id="social">
+                  <!--Your Github,linkedin and instagram Social media link goes here-->
+              <a target="_blank" href="http://www.github.com/davdtheemonk"><i style="font-size:30px;color: white;" class="fab fa-github-square"></i></a>
+<a target="_blank" href="https://ke.linkedin.com/in/david-mugalla-198149215">    <i style="font-size:30px;color: white;" class="fab fa-linkedin-in"></i></a>
+<a class="face-button" href="#" class="res" download rel="noopener noreferrer" target="_blank">
+
+
+  
+  <div class="face-secondary">
+    <span class="icon fa fa-hdd-o" style="color: white;"> My Resume</span>
+    
+  </div>
+
+</a>
+              <a href="#"><i style ="font-size:30px;color: white;" class="fab fa-instagram"></i></a>
+</div>
       <p style="font-size: 11px;">Copyright &copy; 2021 David Mugalla <i class="fas fa-circle-notch"></i> Hosted on Github</p>
       
     
